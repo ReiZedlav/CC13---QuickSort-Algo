@@ -8,6 +8,9 @@ Valdez
 Waga
 */
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
 
 // Java program for implementation of QuickSort
 
@@ -58,15 +61,25 @@ class QuickSort
     }
 
     // Driver program
-    public static void main(String args[])
+    public static void main(String args[]) throws FileNotFoundException
     {
-        int a[] = {10, 7, 8, 9, 1, 5};
+        // fetches elements from input.txt
+        int textFileLength;
+        Scanner infile = new Scanner (new File("input.txt"));
+        textFileLength = infile.nextInt();
+
+       int [] a = new int [textFileLength];
+
+        for (int i = 0; i < textFileLength; i++) {
+            a[i] = infile.nextInt();
+        }
+        infile.close();
         int n = a.length;
 
         QuickSort ob = new QuickSort();
         ob.sort(a, 0, n-1);
 
-        for (int i=0; i<n; ++i)
+        for (int i=0; i<n; ++i) 
             System.out.print(a[i]+" ");
     }
 }
