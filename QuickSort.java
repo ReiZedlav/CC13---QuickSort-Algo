@@ -76,9 +76,19 @@ class QuickSort
         infile.close();
         int n = a.length;
 
+        // Display unsorted array
+        System.out.println("Unsorted array:");
+        for (int i = 0; i < n; i++) {
+            System.out.print(a[i] + " ");
+        }
+        System.out.println();
+
+        //sort the array
         QuickSort ob = new QuickSort();
         ob.sort(a, 0, n-1);
 
+        //display sorted array
+        System.out.println("Array sorted using QuickSort:");
         for (int i=0; i<n; ++i) 
             System.out.print(a[i]+" ");
     }
